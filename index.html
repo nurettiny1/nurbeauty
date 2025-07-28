@@ -1,132 +1,1430 @@
 <!DOCTYPE html>
 <html lang="tr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nurettin YAVUZ</title>
-    <link rel="stylesheet" href="style.css?v0.1">
 
-    <!-- Fontlar & İkonlar -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&family=Orbitron&family=Pacifico&display=swap" rel="stylesheet">
-    
-    <!-- Sayfa Stili2 -->
-    
-  </head>
-  <body>
-    <!-- Başlık -->
-    <div class="header-box fade-in">
-      <h1 class="modern-title fade-in">Nurettin YAVUZ</h1>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurbeauty - Premium Güzellik & Bakım Merkezi</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #D4A574;
+            --secondary-color: #F7F1E8;
+            --accent-color: #B8860B;
+            --text-dark: #2C2C2C;
+            --text-light: #6B6B6B;
+            --white: #FFFFFF;
+            --cream: #FAF8F5;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
 
-    <!-- Fotoğraf -->
-    <div class="photo-box fade-in">
-      <img src="123.png" alt="Nurettin YAVUZ" />
-    </div>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Hakkımda -->
-    <h2 class="fade-in"><i class="fas fa-user"></i> Hakkımda</h2>
-    <div class="about-box fade-in">
-      <p>
-        25 yaşındayım ve yazılım konusunda kendimi geliştirmeye çalışıyorum. <br>
-        Öğrendiklerimi pratiğe dökerek ilerlemeyi seviyorum. <br>
-        Bu sayfa, hem kendimi tanıtmak hem de denemeler yapmak için oluşturduğum kişisel bir projedir.
-      </p>
-    </div>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
 
-    <!-- Butonlar -->
-    <a href="https://www.youtube.com/@nurettinyavuzz" class="my-button" target="_blank">
-      <i class="fab fa-youtube"></i> YouTube
-    </a>
-    <a href="https://www.kariyer.net/ozgecmis/nyauige47j7u" class="my-button" target="_blank">
-      <i class="fas fa-briefcase"></i> Kariyerim
-    </a>
-    <a href="https://www.instagram.com/nurettinnyavuzz" class="my-button" target="_blank">
-      <i class="fab fa-instagram"></i> Instagram
-    </a>
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    <div class="email-button-wrapper">
-      <a href="mailto:yavuznurettin081@gmail.com" class="my-button">
-        <i class="fas fa-envelope"></i> E-posta Gönder
-      </a>
-    </div>
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.1);
+            animation: slideDown 0.8s ease-out;
+        }
 
-    <!-- Hobiler -->
-    <h2 class="fade-in"><i class="fas fa-heart"></i> Hobilerim</h2>
-    <ul>
-      <li><i class="fas fa-laptop-code"></i> Bilgisayar</li>
-      <li><i class="fas fa-brain"></i> Yazılım öğrenmek</li>
-      <li><i class="fas fa-plane"></i> Seyahat</li>
-    </ul>
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
 
-    <!-- Sertifikalar -->
-<h2 class="fade-in"><i class="fas fa-certificate"></i> Sertifikalarım</h2>
-<div class="accordion-container fade-in">
-  <button class="accordion">HTML ve CSS Eğitimi</button>
-  <div class="panel">
-    <p>Udemy üzerinden tamamladığım 40 saatlik HTML & CSS eğitimi.</p>
-  </div>
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
 
-  <button class="accordion">JavaScript Temelleri</button>
-  <div class="panel">
-    <p>JavaScript'in temel yapı taşlarını öğrendiğim kısa eğitim.</p>
-  </div>
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
 
-  <button class="accordion">Responsive Tasarım</button>
-  <div class="panel">
-    <p>Mobil uyumlu tasarımlar oluşturma konusunda aldığım temel kurs.</p>
-  </div>
-</div>
+        .nav-menu a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
 
-    <button class="feedback-toggle" onclick="toggleFeedbackForm()">💬 Bana Not Bırak</button>
-    <div class="feedback-form" id="feedbackForm">
-      <h3>Geri Bildirim</h3>
-      <input type="text" placeholder="Adınız" required>
-      <input type="email" placeholder="E-posta Adresiniz" required>
-      <textarea placeholder="Mesajınız..." required></textarea>
-      <button class="submit-btn">Gönder</button>
-    </div>
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
 
-    <div class="accordion-container">
-  <button class="accordion">Hedeflerim</button>
-  <div class="panel">
-    <p>Yazılım alanında uzmanlaşmak ve bir yazılım geliştirici olarak kariyer yapmak istiyorum.</p>
-  </div>
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
 
-  <button class="accordion">Deneyimlerim</button>
-  <div class="panel">
-    <p>Kendi kişisel sitemi yaptım, HTML ve CSS üzerinde çalışıyorum. Sanal makineler kuruyorum.</p>
-  </div>
+        .nav-menu a:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
 
-  <button class="accordion">Gelecek Planlarım</button>
-  <div class="panel">
-    <p>İleride karavanla gezmek, YouTube içerikleri üretmek ve özgür bir yaşam tarzı kurmak istiyorum.</p>
-  </div>
-</div>
+        .appointment-btn {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
 
-    <footer style="margin-top: 50px; padding: 10px; font-size: 14px; color: gray;">
-      © 2025 Nurettin Yavuz | Tüm hakları saklıdır.
+        .appointment-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .appointment-btn:hover::before {
+            left: 100%;
+        }
+
+        .appointment-btn:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: var(--shadow);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background:
+                linear-gradient(135deg, rgba(247, 241, 232, 0.95) 0%, rgba(250, 248, 245, 0.98) 100%),
+                url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding-top: 150px;
+            }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(212, 165, 116, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(184, 134, 11, 0.08) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text {
+            z-index: 2;
+            animation: fadeInLeft 1s ease-out;
+        }
+
+        .hero-subtitle {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: slideInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 600;
+            line-height: 1.1;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            animation: slideInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            max-width: 500px;
+            animation: slideInUp 0.8s ease-out 0.6s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            animation: slideInUp 0.8s ease-out 0.8s both;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+            padding: 18px 0;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary::after {
+            content: '→';
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .btn-secondary:hover::after {
+            transform: translateX(5px);
+        }
+
+        .hero-image {
+            position: relative;
+            height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+            background: url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80') center/cover;
+            animation: fadeInRight 1s ease-out;
+            transition: all 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(212, 165, 116, 0.1), rgba(184, 134, 11, 0.1));
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 0;
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(250, 248, 245, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover fixed;
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.92);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-subtitle {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(212, 165, 116, 0.1);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .service-card:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        .service-card:nth-child(3n) {
+            animation-delay: 0.4s;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--cream));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotateY(360deg) scale(1.1);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+        }
+
+        .service-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 8rem 0;
+            background:
+                linear-gradient(135deg, rgba(250, 248, 245, 0.98) 0%, rgba(247, 241, 232, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1487412912498-0447578fcca8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover fixed;
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(250, 248, 245, 0.93);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-text {
+            padding-right: 2rem;
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: var(--shadow);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+            animation: countUp 2s ease-out;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        .about-image {
+            height: 500px;
+            border-radius: 20px;
+            background: url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover;
+            box-shadow: var(--shadow-hover);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInRight 0.8s ease-out;
+            transition: all 0.3s ease;
+        }
+
+        .about-image:hover {
+            transform: scale(1.02);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(212, 165, 116, 0.2), rgba(184, 134, 11, 0.1));
+        }
+
+        /* Team Section */
+        .team {
+            padding: 8rem 0;
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(250, 248, 245, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1562788869-4ed32648eb72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80') center/cover fixed;
+            position: relative;
+        }
+
+        .team::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.94);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .team-member {
+            text-align: center;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .team-member:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .team-member:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px) rotateY(5deg);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover .member-photo {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .member-photo.photo1 {
+            background: url('https://images.unsplash.com/photo-1594736797933-d0408aa86507?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80') center/cover;
+        }
+
+        .member-photo.photo2 {
+            background: url('https://images.unsplash.com/photo-1559599101-f09722fb4948?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80') center/cover;
+        }
+
+        .member-photo.photo3 {
+            background: url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80') center/cover;
+        }
+
+        .member-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .member-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 0;
+            background:
+                linear-gradient(135deg, rgba(247, 241, 232, 0.98) 0%, rgba(250, 248, 245, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1522338242992-e1a54906a8da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2146&q=80') center/cover fixed;
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(247, 241, 232, 0.92);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px) translateX(10px);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .contact-details h4 {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid rgba(212, 165, 116, 0.1);
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--cream);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: var(--white);
+            transform: scale(1.02);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            background: #128C7E;
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px rgba(212, 165, 116, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(212, 165, 116, 0.8);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Scroll reveal animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Nurbeauty</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Ana Sayfa</a></li>
+                <li><a href="#services">Hizmetler</a></li>
+                <li><a href="#about">Hakkımızda</a></li>
+                <li><a href="#team">Ekibimiz</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+            <a href="#contact" class="appointment-btn">Randevu Al</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-subtitle">Premium Güzellik Merkezi</div>
+                    <h1 class="hero-title">Doğal Güzelliğinizi Keşfedin</h1>
+                    <p class="hero-description">
+                        Deneyimli uzmanlarımız ve son teknoloji ekipmanlarımızla, size özel tasarlanmış güzellik ve
+                        bakım hizmetleri sunuyoruz. Kendinizi özel hissettiren bir deneyim yaşayın.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#services" class="btn-primary">Hizmetlerimizi Keşfedin</a>
+                        <a href="#about" class="btn-secondary">Hakkımızda</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    ✨
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <div class="section-subtitle">Hizmetlerimiz</div>
+                <h2 class="section-title">Premium Bakım Deneyimi</h2>
+                <p class="section-description">
+                    Size özel tasarlanmış, kaliteli malzemeler ve uzman dokunuşuyla sunulan kapsamlı güzellik
+                    hizmetlerimizi keşfedin.
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card scroll-reveal">
+                    <div class="service-icon">💇‍♀️</div>
+                    <h3 class="service-title">Saç Tasarım & Bakım</h3>
+                    <p class="service-description">
+                        Profesyonel saç kesimi, renklendirme, şekillendirme ve özel bakım tedavileri. En son trendleri
+                        takip eden stilistlerimizle yeni imajınızı keşfedin.
+                    </p>
+                    <div class="service-price">₺150 - ₺500</div>
+                </div>
+                <div class="service-card scroll-reveal">
+                    <div class="service-icon">✨</div>
+                    <h3 class="service-title">Profesyonel Cilt Bakımı</h3>
+                    <p class="service-description">
+                        Cilt analizi, deep cleansing, anti-aging bakımlar ve kişiye özel tedavi programları. Cildinizin
+                        ihtiyacına uygun en etkili çözümler.
+                    </p>
+                    <div class="service-price">₺200 - ₺800</div>
+                </div>
+                <div class="service-card scroll-reveal">
+                    <div class="service-icon">💅</div>
+                    <h3 class="service-title">Nail Art & Manikür</h3>
+                    <p class="service-description">
+                        Trend nail art tasarımları, gel oje uygulamaları, protez tırnak ve özel manikür-pedikür
+                        hizmetleri. El ve ayak bakımınızda mükemmellik.
+                    </p>
+                    <div class="service-price">₺80 - ₺300</div>
+                </div>
+                <div class="service-card scroll-reveal">
+                    <div class="service-icon">👁️</div>
+                    <h3 class="service-title">Kaş & Kirpik Tasarımı</h3>
+                    <p class="service-description">
+                        Kaş laminasyonu, microblading, kirpik lifting, extensions ve kalıcı makyaj uygulamaları. Doğal
+                        güzelliğinizi öne çıkaran tasarımlar.
+                    </p>
+                    <div class="service-price">₺120 - ₺600</div>
+                </div>
+                <div class="service-card scroll-reveal">
+                    <div class="service-icon">💆‍♀️</div>
+                    <h3 class="service-title">Wellness & SPA</h3>
+                    <p class="service-description">
+                        Aromaterapi masajı, vücut bakımları, detoks tedavileri ve rahatlatıcı spa rituelleri. Zihin ve
+                        beden dengenizi yeniden kurun.
+                    </p>
+                    <div class="service-price">₺180 - ₺750</div>
+                </div>
+                <div class="service-card scroll-reveal">
+                    <div class="service-icon">💄</div>
+                    <h3 class="service-title">Profesyonel Makyaj</h3>
+                    <p class="service-description">
+                        Özel günler için profesyonel makyaj, gelin makyajı, fotoğraf çekimleri ve makyaj eğitimleri.
+                        Tarzınıza uygun mükemmel görünüm.
+                    </p>
+                    <div class="service-price">₺100 - ₺400</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="section-subtitle scroll-reveal">Hakkımızda</div>
+                    <h2 class="section-title scroll-reveal">Nurbeauty Farkı</h2>
+                    <p class="section-description scroll-reveal">
+                        2015 yılından bu yana Bursa'da faaliyet gösteren Nurbeauty, güzellik ve bakım sektöründe öncü
+                        bir marka olarak hizmet vermektedir. Deneyimli ekibimiz, kaliteli ürünlerimiz ve müşteri odaklı
+                        yaklaşımımızla sektörde fark yaratıyoruz.
+                    </p>
+                    <div class="about-stats scroll-reveal">
+                        <div class="stat">
+                            <span class="stat-number">8+</span>
+                            <span class="stat-label">Yıl Deneyim</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5000+</span>
+                            <span class="stat-label">Mutlu Müşteri</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Hizmet Çeşidi</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">%98</span>
+                            <span class="stat-label">Memnuniyet Oranı</span>
+                        </div>
+                    </div>
+                    <p class="scroll-reveal">
+                        Hijyen standartlarımız, kaliteli ürün seçimimiz ve sürekli gelişen teknik bilgimizle size en iyi
+                        hizmeti sunmayı hedefliyoruz. Her müşterimiz bizim için özeldir ve kendilerini değerli
+                        hissetmeleri bizim önceliğimizdir.
+                    </p>
+                </div>
+                <div class="about-image">
+                    🏆
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle scroll-reveal">Ekibimiz</div>
+                <h2 class="section-title scroll-reveal">Uzman Kadromuz</h2>
+                <p class="section-description scroll-reveal">
+                    Alanında uzman, deneyimli ve sürekli kendini geliştiren profesyonel ekibimizle size en iyi hizmeti
+                    sunuyoruz.
+                </p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member scroll-reveal">
+                    <div class="member-photo photo1"></div>
+                    <h3 class="member-name">Nur Yılmaz</h3>
+                    <div class="member-role">Kurucu & Başstilist</div>
+                    <p class="member-description">
+                        15 yıllık deneyime sahip, İstanbul ve Paris'te eğitim almış uzman stilist. Saç tasarımı ve
+                        renklendirmede uzman.
+                    </p>
+                </div>
+                <div class="team-member scroll-reveal">
+                    <div class="member-photo photo2"></div>
+                    <h3 class="member-name">Ayşe Demir</h3>
+                    <div class="member-role">Cilt Bakım Uzmanı</div>
+                    <p class="member-description">
+                        Dermatoloji alanında sertifikalı, 10 yıllık deneyime sahip cilt bakım uzmanı. Anti-aging ve
+                        problemli cilt tedavilerinde uzman.
+                    </p>
+                </div>
+                <div class="team-member scroll-reveal">
+                    <div class="member-photo photo3"></div>
+                    <h3 class="member-name">Zeynep Kaya</h3>
+                    <div class="member-role">Nail Art Uzmanı</div>
+                    <p class="member-description">
+                        Nail art konusunda uluslararası sertifikalara sahip, yaratıcı tasarımları ve titiz çalışmasıyla
+                        tanınan uzman.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle scroll-reveal">İletişim</div>
+                <h2 class="section-title scroll-reveal">Bize Ulaşın</h2>
+                <p class="section-description scroll-reveal">
+                    Randevu almak veya sorularınız için bizimle iletişime geçin. Size en uygun zamanı birlikte
+                    belirleyelim.
+                </p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item scroll-reveal">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Adresimiz</h4>
+                            <p>Nilüfer Mahallesi, Güzellik Sokak No:15<br>Nilüfer/Bursa</p>
+                        </div>
+                    </div>
+                    <div class="contact-item scroll-reveal">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h4>Telefon</h4>
+                            <p>(0224) 555 0123</p>
+                        </div>
+                    </div>
+                    <div class="contact-item scroll-reveal">
+                        <div class="contact-icon">💬</div>
+                        <div class="contact-details">
+                            <h4>WhatsApp</h4>
+                            <p>0532 123 45 67</p>
+                        </div>
+                    </div>
+                    <div class="contact-item scroll-reveal">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>E-posta</h4>
+                            <p>info@nurbeauty.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form class="scroll-reveal">
+                        <div class="form-group">
+                            <label for="name">Adınız Soyadınız</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-posta</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Hizmet</label>
+                            <select id="service" name="service" style="width: 100%; padding: 15px 20px; border: 2px solid rgba(212, 165, 116, 0.1); border-radius: 12px; font-family: inherit; font-size: 1rem; transition: all 0.3s ease; background: var(--cream);">
+                                <option value="">Hizmet Seçiniz</option>
+                                <option value="sac">Saç Tasarım & Bakım</option>
+                                <option value="cilt">Profesyonel Cilt Bakımı</option>
+                                <option value="nail">Nail Art & Manikür</option>
+                                <option value="kas-kirpik">Kaş & Kirpik Tasarımı</option>
+                                <option value="spa">Wellness & SPA</option>
+                                <option value="makyaj">Profesyonel Makyaj</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mesajınız</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Randevu tercihinizi veya özel isteklerinizi belirtiniz..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Mesaj Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Nurbeauty</h3>
+                    <p>Premium güzellik ve bakım hizmetleri ile doğal güzelliğinizi keşfedin. Deneyimli ekibimiz ve kaliteli hizmetimizle yanınızdayız.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hızlı Linkler</h3>
+                    <p><a href="#home">Ana Sayfa</a></p>
+                    <p><a href="#services">Hizmetlerimiz</a></p>
+                    <p><a href="#about">Hakkımızda</a></p>
+                    <p><a href="#team">Ekibimiz</a></p>
+                    <p><a href="#contact">İletişim</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>İletişim Bilgileri</h3>
+                    <p>📍 Nilüfer Mahallesi, Güzellik Sokak No:15, Nilüfer/Bursa</p>
+                    <p>📞 (0224) 555 0123</p>
+                    <p>📧 info@nurbeauty.com</p>
+                    <p>💬 WhatsApp: 0532 123 45 67</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Çalışma Saatleri</h3>
+                    <p>Pazartesi - Cumartesi: 09:00 - 19:00</p>
+                    <p>Pazar: 10:00 - 17:00</p>
+                    <p>Randevu için önceden arayınız.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nurbeauty. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
     </footer>
 
-    <script>
-      function toggleFeedbackForm() {
-        var form = document.getElementById("feedbackForm");
-        form.style.display = (form.style.display === "block") ? "none" : "block";
-      }
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/905321234567?text=Merhaba, randevu almak istiyorum." class="whatsapp-btn" target="_blank">
+        💬
+    </a>
 
-      const accordions = document.querySelectorAll(".accordion");
-accordions.forEach(btn => {
-  btn.addEventListener("click", function () {
-    this.classList.toggle("active");
-    const panel = this.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    }
-  });
-});
- 
+    <script>
+        // Smooth scroll navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all scroll-reveal elements
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Form validation
+            const name = this.name.value.trim();
+            const phone = this.phone.value.trim();
+            
+            if (!name || !phone) {
+                alert('Lütfen ad soyad ve telefon bilgilerinizi giriniz.');
+                return;
+            }
+
+            // Create WhatsApp message
+            const service = this.service.value ? ` - ${this.service.options[this.service.selectedIndex].text}` : '';
+            const message = this.message.value ? `\nMesaj: ${this.message.value}` : '';
+            const email = this.email.value ? `\nE-posta: ${this.email.value}` : '';
+            
+            const whatsappMessage = encodeURIComponent(
+                `Merhaba, randevu almak istiyorum.\n\nAdım: ${name}\nTelefon: ${phone}${email}\nHizmet: ${service}${message}`
+            );
+            
+            window.open(`https://wa.me/905321234567?text=${whatsappMessage}`, '_blank');
+            
+            // Reset form
+            this.reset();
+            alert('Mesajınız WhatsApp üzerinden gönderilecek. Teşekkür ederiz!');
+        });
+
+        // Counter animation for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/[^\d]/g, ''));
+                const increment = target / 100;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        if (counter.textContent.includes('%')) {
+                            counter.textContent = `%${Math.ceil(current)}`;
+                        } else if (counter.textContent.includes('+')) {
+                            counter.textContent = `${Math.ceil(current)}+`;
+                        } else {
+                            counter.textContent = Math.ceil(current);
+                        }
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = counter.textContent; // Keep original format
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        // Trigger counter animation when about section is visible
+        const aboutSection = document.querySelector('#about');
+        const aboutObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    aboutObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        aboutObserver.observe(aboutSection);
+
+        // Parallax effect for background images
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.hero, .services, .about, .team, .contact');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.5;
+                element.style.backgroundPositionY = `${scrolled * speed * (index % 2 === 0 ? 1 : -1)}px`;
+            });
+        });
     </script>
-  </body>
+</body>
 </html>
